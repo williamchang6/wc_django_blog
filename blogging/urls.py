@@ -1,11 +1,14 @@
 from django.urls import include, path
 from rest_framework import routers
-from blogging.views import list_view, detail_view, UserViewSet, GroupViewSet
+from blogging.views import (list_view, detail_view, UserViewSet, GroupViewSet,
+                            PostViewSet, CategoryViewSet)
 
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
+router.register(r'postapi', PostViewSet)
+router.register(r'categoryapi', CategoryViewSet)
 
 
 urlpatterns = [
